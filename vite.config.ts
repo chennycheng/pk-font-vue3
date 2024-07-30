@@ -3,12 +3,16 @@ import { fileURLToPath, URL } from 'node:url'
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
-import vueDevTools from 'vite-plugin-vue-devtools'
-
-import VueRouter from 'unplugin-vue-router/vite'
+// import vueDevTools from 'vite-plugin-vue-devtools'
 import { VueRouterAutoImports } from 'unplugin-vue-router'
+import VueRouter from 'unplugin-vue-router/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite' // 自动导入 src/components 下的组件
+import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
+import Icons from 'unplugin-icons/vite'
+import IconsResolver from 'unplugin-icons/resolver'
+
+import Layouts from 'vite-plugin-vue-layouts'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -17,7 +21,7 @@ export default defineConfig({
     // Vue must be places after VueRouter()
     vue(),
     vueJsx(),
-    vueDevTools(),
+    // vueDevTools(),
     AutoImport({
       // targets to transform
       include: [
@@ -32,7 +36,8 @@ export default defineConfig({
         'vue',
         VueRouterAutoImports,
         '@vueuse/core'
-      ]
+      ],
+      resolvers: [ElementPlusResolver()]
     }),
     Components({
       // Allow subdirectories as namespace prefix for components.
@@ -40,7 +45,15 @@ export default defineConfig({
       // Collapse same prefixes (camel-sensitive) of folders and components
       // to prevent duplication inside namespaced component name.
       // works when `directoryAsNamespace: true`
-      collapseSamePrefixes: true
+      collapseSamePrefixes: true,
+      resolvers: [ElementPlusResolver(), IconsResolver({ prefix: 'icon' })]
+    }),
+    Icons({
+      autoInstall: true
+    }),
+    Layouts({
+      layoutsDirs: 'src/layouts',
+      defaultLayout: 'default'
     })
   ],
   resolve: {

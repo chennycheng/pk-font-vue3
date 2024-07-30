@@ -7,6 +7,8 @@
     <div>{{ x }}, {{ y }}, {{ isOutside }}</div>
     <User />
     <UserBasicInfo />
+    <el-button type="primary">Primary</el-button>
+    <icon-mdi-account style="color: red"></icon-mdi-account>
   </div>
 </template>
 
@@ -18,3 +20,8 @@ const { x, y, isOutside } = useMouseInElement(target)
 </script>
 
 <style scoped></style>
+
+<route lang="yaml">
+meta:
+  layout: login
+</route>

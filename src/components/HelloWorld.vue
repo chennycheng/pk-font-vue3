@@ -5,7 +5,12 @@ defineProps<{
 </script>
 
 <template>
-  <div class="greetings">hello world</div>
+  <div class="greetings">{{ msg || 'hello world' }}</div>
 </template>
 
-<style scoped></style>
+<style scoped lang="scss">
+.greetings {
+  font-size: 20px;
+  font-weight: bold;
+}
+</style>

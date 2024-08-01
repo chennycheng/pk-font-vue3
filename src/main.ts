@@ -1,5 +1,5 @@
 // import 'reset-css'
-import '@unocss/reset/normalize.css'
+import '@unocss/reset/tailwind.css'
 import 'virtual:uno.css'
 import './assets/main.css'
 

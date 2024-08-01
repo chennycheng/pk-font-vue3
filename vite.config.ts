@@ -35,7 +35,8 @@ export default defineConfig({
         // presets
         'vue',
         VueRouterAutoImports,
-        '@vueuse/core'
+        '@vueuse/core',
+        'pinia'
       ],
       resolvers: [ElementPlusResolver()]
     }),

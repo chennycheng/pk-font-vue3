@@ -3,11 +3,33 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" href="/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0" />
     <title>Vite App</title>
   </head>
   <body>
     <div id="app"></div>
     <script type="module" src="/src/main.ts"></script>
   </body>
+  <!-- 解决移动端适配问题解决方案 -->
+  <!-- <script>
+    // 一、通过userAgent判断是否为移动端
+    if (/iphone|android|windows phone/.test(navigator.userAgent.toLowerCase())) {
+      // 1.移动端跳转移动端页面
+      window.location.href = 'https://m.aminer.cn'
+      // 2.给body添加移动端样式
+      document.body.classList.add('mobile-device')
+    }
+  </script> -->
+  <!-- <script>
+    // 二、通过监听窗口大小变化判断是否为移动端
+    window.addEventListener('DOMContentLoaded', function () {
+      setFontSize()
+      window.onresize = function () {
+        setFontSize()
+      }
+    })
+    function setFontSize() {
+      document.documentElement.style.fontSize = (document.documentElement.clientWidth / 1920) * 16 + 'px'
+    }
+  </script> -->
 </html>

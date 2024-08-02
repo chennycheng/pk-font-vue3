@@ -1,5 +1,7 @@
 export const useThemeStore = defineStore('theme', {
   state: () => ({
-    rate: 0
+    ww: window.innerWidth,
+    rate: 0,
+    mobile: false
   })
 })

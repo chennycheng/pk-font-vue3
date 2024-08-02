@@ -11,7 +11,9 @@ useResizeObserver(document.body, () => {
   const width = window.innerWidth
   const contentWidth = 1200
   themeStore.$patch({
-    rate: width < 1200 ? +(width / contentWidth).toFixed(2) : 1
+    ww: width,
+    rate: width < 1200 ? +(width / contentWidth).toFixed(2) : 1,
+    mobile: /iphone|android|windows phone/.test(navigator.userAgent.toLowerCase())
   })
 })
 </script>

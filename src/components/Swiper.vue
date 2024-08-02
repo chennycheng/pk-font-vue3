@@ -14,7 +14,7 @@
         <slot :item="item">
           <div class="bg-image" :style="{ backgroundImage: `url(${item.image})` }">
             <Container class="h-full">
-              <div class="w-full flex flex-col justify-center items-start px-8 lt-sm:px-4">
+              <div class="w-full flex flex-col justify-center items-start lt-sm:px-4">
                 <p class="text-base sm:text-2xl text-white font-bold">{{ item.title }}</p>
                 <p class="text-xs sm:text-lg text-gray-100 pt-4">{{ item.subTitle }}</p>
                 <p>{{ item.desc }}</p>

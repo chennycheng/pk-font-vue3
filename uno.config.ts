@@ -17,5 +17,13 @@ export default defineConfig({
       }
     })
   ],
-  transformers: [transformerDirectives(), transformerVariantGroup()]
+  transformers: [transformerDirectives(), transformerVariantGroup()],
+  theme: {
+    colors: {
+      primary: '#ff6b81',
+      'primary-light': '#ff9eb3',
+      'primary-dark': '#ff427f',
+      'primary-hover': '#ff819e'
+    }
+  }
 })
